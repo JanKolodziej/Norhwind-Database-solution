@@ -42,15 +42,25 @@ Since there is no API interface yet, the best way to see the code in action is v
 2.  Open **Test Explorer** (`Test` -> `Test Explorer`).
 3.  Run all tests to verify that the LINQ queries produce the expected results against the In-Memory database.
 
+
 ## ⚙️ Setup
 
 1.  **Clone the repo**
     ```bash
-    git clone [https://github.com/your-username/northwind-linq-exercises.git](https://github.com/your-username/northwind-linq-exercises.git)
+    git clone https://github.com/JanKolodziej/Norhwind-Database-solution.git
     ```
-2.  **Database (Optional for now)**
-    * While the tests run In-Memory, to use the real context you need the [Northwind SQL Script](https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs).
-    * Update `ConnectionStrings` in `appsettings.json`.
+
+2.  **Database Creation (Optional)**
+    While the tests run In-Memory, you can create the real database using the provided SQL script (e.g., `SQLQuery1.sql` or `instnwnd.sql`).
+
+    * **Source:** The instructions and script file are sourced from the official [Microsoft SQL Server Samples](https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs).
+
+    **How to run the script in Visual Studio:**
+    1.  Open Visual Studio.
+    2.  Open **SQL Server Object Explorer** (`View` -> `SQL Server Object Explorer`).
+    3.  Connect to the target SQL Server (e.g., `(localdb)\MSSQLLocalDB`).
+    4.  Open the script file in a new query window.
+    5.  **Run the script** (Click the Execute button).
 
 ---
 ## 👤 Author
