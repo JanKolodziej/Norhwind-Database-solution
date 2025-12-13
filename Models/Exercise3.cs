@@ -17,7 +17,7 @@ namespace NW_Class_lib
         }
         public int Report_Delayed_shipments() //Create a report that shows the order ids and the associated employee names for orders that shipped after the required date (37 rows)
         {
-            var report = db.Orders.Where(o => o.ShippedDate.Value > o.RequiredDate).Select(o => new
+            var report = db.Orders.Where(o => o.ShippedDate!= null && o.ShippedDate.Value > o.RequiredDate).Select(o => new
             {
                 o.OrderId,
                 o.Employee

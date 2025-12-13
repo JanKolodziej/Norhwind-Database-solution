@@ -60,7 +60,7 @@ namespace Models
         /// <returns></returns>
         public int Count_Orders_In_GivenYear(int year)
         {
-            int count = (db.Orders.Where(p => p.OrderDate.Value.Year == year)).Count();
+            int count = (db.Orders.Where(p => p.OrderDate !=null && p.OrderDate.Value.Year == year)).Count();
             return count;
         }
 
@@ -72,7 +72,7 @@ namespace Models
         /// <returns></returns>
         public List<string> Get_Names_Managers_alphab()
         {
-            List<string> names = db.Customers.Where(p => p.ContactTitle.Contains("Manager")).OrderBy(p=> p.CompanyName).Select(p => p.ContactName).ToList();
+            List<string> names = db.Customers.Where(p => p.ContactTitle!= null && p.ContactName != null  && p.ContactTitle.Contains("Manager")).OrderBy(p=> p.CompanyName).Select(p => p.ContactName!).ToList();
             return names;
         }
 
@@ -84,7 +84,7 @@ namespace Models
         /// <returns></returns>
         public List<Order> Get_Orders_At_Given_Date(DateTime date)
         {
-            List<Order> orders = db.Orders.Where(p => p.OrderDate.Value.Date == date.Date).ToList();
+            List<Order> orders = db.Orders.Where(p => p.OrderDate != null && p.OrderDate.Value.Date == date.Date).ToList();
             return orders;
         }
     }
