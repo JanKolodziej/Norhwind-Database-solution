@@ -8,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace NW_Class_lib
 {
-    public class Exercise5 //Exercise SQL Updating Records
+    public class Exercise5:Exercise_temp //Exercise SQL Updating Records
     {
-        private NorthwindContext db;
-
-        public Exercise5(NorthwindContext northwindContext)
-        {
-            db = northwindContext;
-        }
+        public Exercise5(NorthwindContext context) : base(context) { }
         public void Update_My_phone()//Update the phone of yourself (from the previous entry in Employees table)
         {
             Employee? me = db.Employees

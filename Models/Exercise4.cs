@@ -8,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace NW_Class_lib
 {
-    public class Exercise4 //Exercise SQL Inserting Records
+    public class Exercise4:Exercise_temp //Exercise SQL Inserting Records
     {
-        private NorthwindContext db;
-        
-        public Exercise4(NorthwindContext northwindContext)
-        {
-            db = northwindContext;
-        }
+        public Exercise4(NorthwindContext context) : base(context) { }
         //Insert yourself into the Employees table Include the following fields: LastName, FirstName, Title, TitleOfCourtesy, BirthDate,
         //HireDate, City, Region, PostalCode, Country, HomePhone, ReportsTo
         public void Insert_Myself()

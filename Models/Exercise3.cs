@@ -8,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace NW_Class_lib
 {
-    public class Exercise3 //Exercise SQL Queries for HAVING
+    public class Exercise3:Exercise_temp //Exercise SQL Queries for HAVING
     {
-        private NorthwindContext db;
-        public Exercise3(NorthwindContext northwindContext)
-        {
-            db = northwindContext;
-        }
+        public Exercise3(NorthwindContext context) : base(context) { }
         public int Report_Delayed_shipments() //Create a report that shows the order ids and the associated employee names for orders that shipped after the required date (37 rows)
         {
             var report = db.Orders.Where(o => o.ShippedDate!= null && o.ShippedDate.Value > o.RequiredDate).Select(o => new

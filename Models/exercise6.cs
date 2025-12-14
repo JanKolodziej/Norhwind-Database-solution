@@ -8,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace NW_Class_lib
 {
-    public class Exercise6
+    public class Exercise6:Exercise_temp
     {
-        private NorthwindContext db;
-
-        public Exercise6(NorthwindContext northwindContext)
-        {
-            db = northwindContext;
-        }
+        public Exercise6(NorthwindContext context) : base(context) { }
         public void Delete_records_with_me() //Delete the records you inserted before. Don't delete any other records!
         {
             Employee? me = db.Employees

@@ -8,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace NW_Class_lib
 {
-    public class Exercise2
+    public class Exercise2:Exercise_temp
     {
-        private NorthwindContext db;
-        public Exercise2(NorthwindContext northwindContext)
-        {
-            db = northwindContext;
-        }
+        public Exercise2(NorthwindContext context) : base(context) { }
 
         public List<Order> Report_Orders_Customers_1996() //Create a report for all the orders of 1996 and their Customers (152 rows)
         {

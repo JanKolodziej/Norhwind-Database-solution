@@ -1,18 +1,15 @@
 ﻿using Models.Models;
 using Microsoft.EntityFrameworkCore;
+using NW_Class_lib;
 
 namespace Models
 {
     // Doing exercises do enhance my EF Core skills 
     //Exercises from https://github.com/eirkostop/SQL-Northwind-exercises?tab=readme-ov-file
-    public class Exercise1
+    public class Exercise1:Exercise_temp
     {
-        private NorthwindContext db;
-        public Exercise1(NorthwindContext northwindContext)
-        {
-            db= northwindContext;
-        }
-
+        
+        public Exercise1(NorthwindContext context):base(context) { }
 
         /// <summary>
         /// Exercise 1.1
